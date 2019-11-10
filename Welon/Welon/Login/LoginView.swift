@@ -13,6 +13,10 @@ struct LoginView: View {
     @State private var email: String = ""
     @State private var password: String = ""
     @State private var isLogin: Int? = nil
+    
+    @Environment(\.managedObjectContext) var managedObjectContext
+    @FetchRequest(fetchRequest: Restaurant.getAllRestaurants()) var restaurants:FetchedResults<Restaurant>
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -31,7 +35,15 @@ struct LoginView: View {
                     .padding(.horizontal, 50)
                 NavigationLink(destination: DashBoard(), tag: 1, selection: $isLogin) {
                     Button(action: {
-                        print("login tapped")
+                        self.nukeTables()
+                        let restauranttopush = Restaurant(context: self.managedObjectContext)
+                        restauranttopush.name = "toto"
+                        restauranttopush.address = "tata"
+                        do {
+                            try self.managedObjectContext.save()
+                        }catch{
+                            print(error)
+                        }
                         self.login(email: self.email, password: self.password)
                     }){
                         Text("SE CONNECTER").padding().foregroundColor(.white).background(Color.init(red: 0.00, green: 0.78, blue: 0.32))
@@ -40,6 +52,17 @@ struct LoginView: View {
                 }
             }
         }.padding(.bottom, self.keyboard.currentHeight)
+    }
+    
+    func nukeTables() {
+        for restaurant in self.restaurants {
+            managedObjectContext.delete(restaurant)
+            do {
+                try self.managedObjectContext.save()
+            } catch {
+                print(error)
+            }
+        }
     }
     
     func login(email: String, password: String){

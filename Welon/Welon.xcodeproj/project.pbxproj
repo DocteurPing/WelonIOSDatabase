@@ -18,6 +18,7 @@
 		C504F087236E0D0200DD0393 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C504F086236E0D0200DD0393 /* Constants.swift */; };
 		C504F08A236E0D3400DD0393 /* DashBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C504F089236E0D3400DD0393 /* DashBoard.swift */; };
 		C504F08D236E0F4400DD0393 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = C504F08C236E0F4400DD0393 /* Restaurant.swift */; };
+		C51C3946237875B80022C5D7 /* RestaurantRowItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51C3945237875B80022C5D7 /* RestaurantRowItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		C504F086236E0D0200DD0393 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C504F089236E0D3400DD0393 /* DashBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoard.swift; sourceTree = "<group>"; };
 		C504F08C236E0F4400DD0393 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		C51C3945237875B80022C5D7 /* RestaurantRowItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantRowItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				C504F089236E0D3400DD0393 /* DashBoard.swift */,
+				C51C3945237875B80022C5D7 /* RestaurantRowItem.swift */,
 			);
 			path = DashBoard;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 				C504F082236E0C8500DD0393 /* LoginView.swift in Sources */,
 				C504F08D236E0F4400DD0393 /* Restaurant.swift in Sources */,
 				C504F087236E0D0200DD0393 /* Constants.swift in Sources */,
+				C51C3946237875B80022C5D7 /* RestaurantRowItem.swift in Sources */,
 				C504F06D236E0BD200DD0393 /* Welon.xcdatamodeld in Sources */,
 				C504F085236E0CC400DD0393 /* KeyboardResponder.swift in Sources */,
 			);

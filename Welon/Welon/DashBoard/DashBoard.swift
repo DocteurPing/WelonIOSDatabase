@@ -9,8 +9,19 @@
 import SwiftUI
 
 struct DashBoard: View {
+    
+    @Environment(\.managedObjectContext) var managedObjectContext
+    @FetchRequest(fetchRequest: Restaurant.getAllRestaurants()) var restaurants:FetchedResults<Restaurant>
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List {
+            Section(header: Text("Restaurants")) {
+                ForEach(self.restaurants) { restaurant in
+                    RestaurantRowItem(name: restaurant.name!, address: restaurant.address!)
+                }
+            }
+            Text("test")
+        }
     }
 }
 
