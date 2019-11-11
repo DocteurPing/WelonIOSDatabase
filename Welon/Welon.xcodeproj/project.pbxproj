@@ -19,6 +19,7 @@
 		C504F08A236E0D3400DD0393 /* DashBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C504F089236E0D3400DD0393 /* DashBoard.swift */; };
 		C504F08D236E0F4400DD0393 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = C504F08C236E0F4400DD0393 /* Restaurant.swift */; };
 		C51C3946237875B80022C5D7 /* RestaurantRowItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51C3945237875B80022C5D7 /* RestaurantRowItem.swift */; };
+		C5DF4EEF2379FF5A003F4DC4 /* cookie_green.png in Resources */ = {isa = PBXBuildFile; fileRef = C5DF4EEE2379FF5A003F4DC4 /* cookie_green.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		C504F089236E0D3400DD0393 /* DashBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoard.swift; sourceTree = "<group>"; };
 		C504F08C236E0F4400DD0393 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		C51C3945237875B80022C5D7 /* RestaurantRowItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantRowItem.swift; sourceTree = "<group>"; };
+		C5DF4EEE2379FF5A003F4DC4 /* cookie_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cookie_green.png; path = ../../../../../Downloads/cookie_green.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 				C504F070236E0BD400DD0393 /* Assets.xcassets */,
 				C504F075236E0BD400DD0393 /* LaunchScreen.storyboard */,
 				C504F078236E0BD400DD0393 /* Info.plist */,
+				C5DF4EEE2379FF5A003F4DC4 /* cookie_green.png */,
 				C504F06B236E0BD200DD0393 /* Welon.xcdatamodeld */,
 				C504F072236E0BD400DD0393 /* Preview Content */,
 			);
@@ -184,6 +187,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C504F077236E0BD400DD0393 /* LaunchScreen.storyboard in Resources */,
+				C5DF4EEF2379FF5A003F4DC4 /* cookie_green.png in Resources */,
 				C504F074236E0BD400DD0393 /* Preview Assets.xcassets in Resources */,
 				C504F071236E0BD400DD0393 /* Assets.xcassets in Resources */,
 			);
@@ -342,6 +346,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Welon/Preview Content\"";
+				DEVELOPMENT_TEAM = MNPUMTPS7V;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Welon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -361,6 +366,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Welon/Preview Content\"";
+				DEVELOPMENT_TEAM = MNPUMTPS7V;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Welon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
