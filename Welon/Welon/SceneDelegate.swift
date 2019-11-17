@@ -31,7 +31,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             
             let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
             
-            let contentView = LoginView().environment(\.managedObjectContext, managedObjectContext)
+            let contentView = AppContentView().environment(\.managedObjectContext, managedObjectContext)
             window.rootViewController = UIHostingController(rootView: contentView)
             self.window = window
             window.makeKeyAndVisible()
