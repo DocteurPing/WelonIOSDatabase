@@ -23,15 +23,16 @@ struct DashBoard: View {
                 Image("profile")
                     .resizable()
                     .frame(width: 50.0, height: 50.0)
-            }.padding(.bottom, 20)
+            }.padding(.horizontal)
+                .padding(.top)
             ScrollView {
                 VStack {
                     ForEach(self.restaurants) { restaurant in
-                        RestaurantRowItem(name: restaurant.name!, address: restaurant.address!)
+                        RestaurantRowItem(name: "\(restaurant.name!) - \(restaurant.address!)")
                     }
                 }
             }
-        }.padding()
+        }
     }
 }
 
