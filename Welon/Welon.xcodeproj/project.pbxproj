@@ -19,6 +19,7 @@
 		C504F08A236E0D3400DD0393 /* DashBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C504F089236E0D3400DD0393 /* DashBoard.swift */; };
 		C504F08D236E0F4400DD0393 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = C504F08C236E0F4400DD0393 /* Restaurant.swift */; };
 		C51C3946237875B80022C5D7 /* RestaurantRowItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51C3945237875B80022C5D7 /* RestaurantRowItem.swift */; };
+		C5D4261D23821516004AEEB6 /* WelonUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D4261C23821516004AEEB6 /* WelonUser.swift */; };
 		C5DF4EEF2379FF5A003F4DC4 /* cookie_green.png in Resources */ = {isa = PBXBuildFile; fileRef = C5DF4EEE2379FF5A003F4DC4 /* cookie_green.png */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,7 @@
 		C504F089236E0D3400DD0393 /* DashBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoard.swift; sourceTree = "<group>"; };
 		C504F08C236E0F4400DD0393 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		C51C3945237875B80022C5D7 /* RestaurantRowItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantRowItem.swift; sourceTree = "<group>"; };
+		C5D4261C23821516004AEEB6 /* WelonUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelonUser.swift; sourceTree = "<group>"; };
 		C5DF4EEE2379FF5A003F4DC4 /* cookie_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cookie_green.png; path = ../../../../../Downloads/cookie_green.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -124,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				C504F08C236E0F4400DD0393 /* Restaurant.swift */,
+				C5D4261C23821516004AEEB6 /* WelonUser.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 				C504F08A236E0D3400DD0393 /* DashBoard.swift in Sources */,
 				C504F082236E0C8500DD0393 /* LoginView.swift in Sources */,
 				C504F08D236E0F4400DD0393 /* Restaurant.swift in Sources */,
+				C5D4261D23821516004AEEB6 /* WelonUser.swift in Sources */,
 				C504F087236E0D0200DD0393 /* Constants.swift in Sources */,
 				C51C3946237875B80022C5D7 /* RestaurantRowItem.swift in Sources */,
 				C504F06D236E0BD200DD0393 /* Welon.xcdatamodeld in Sources */,

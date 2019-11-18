@@ -5,7 +5,11 @@
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="serverId" optional="YES" attributeType="String"/>
     </entity>
+    <entity name="WelonUser" representedClassName=".WelonUser" syncable="YES">
+        <attribute name="token" optional="YES" attributeType="String"/>
+    </entity>
     <elements>
         <element name="Restaurant" positionX="-63" positionY="-18" width="128" height="88"/>
+        <element name="WelonUser" positionX="-63" positionY="9" width="128" height="58"/>
     </elements>
 </model>

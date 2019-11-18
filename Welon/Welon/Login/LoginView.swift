@@ -14,6 +14,7 @@ struct AppContentView: View {
     
     @Environment(\.managedObjectContext) var managedObjectContext
     @FetchRequest(fetchRequest: Restaurant.getAllRestaurants()) var restaurants:FetchedResults<Restaurant>
+    @FetchRequest(fetchRequest: WelonUser.getAllWelonUsers()) var users:FetchedResults<WelonUser>
     
     var body: some View {
         return Group {
@@ -36,7 +37,7 @@ struct LoginView: View {
     
     @Environment(\.managedObjectContext) var managedObjectContext
     @FetchRequest(fetchRequest: Restaurant.getAllRestaurants()) var restaurants:FetchedResults<Restaurant>
-    
+    @FetchRequest(fetchRequest: WelonUser.getAllWelonUsers()) var users:FetchedResults<WelonUser>
     var body: some View {
         VStack {
             Image("logo_green")
@@ -60,14 +61,6 @@ struct LoginView: View {
                 .padding(.horizontal, 50)
             Button(action: {
                 self.nukeTables()
-                let restauranttopush = Restaurant(context: self.managedObjectContext)
-                restauranttopush.name = "toto"
-                restauranttopush.address = "tata"
-                do {
-                    try self.managedObjectContext.save()
-                } catch {
-                    print(error)
-                }
                 self.login(email: self.email, password: self.password)
             }){
                 Text("SE CONNECTER").padding().foregroundColor(.white).background(Color.init(red: 0.00, green: 0.78, blue: 0.32))
@@ -102,15 +95,57 @@ struct LoginView: View {
                 return
             }
             do {
-                self.isLogin = true
                 if let json = try? JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any] {
-                    if let token = json["token"] as? String {
-                        print(token)
+                    if let userToken = json["token"] as? String {
+                        let usertopush = WelonUser(context: self.managedObjectContext)
+                        usertopush.token = userToken
+                        self.saveDataBase()
+                        print(usertopush.token ?? "toto")
+                        self.getRestaurants()
                     }
                 }
             }
         }
         dataTask.resume()
+    }
+    
+    func getRestaurants() {
+        guard let ressourceURL = URL(string: Constants.apilink + "/restaurant") else {fatalError()}
+        var urlRequest = URLRequest(url: ressourceURL)
+        urlRequest.httpMethod = "GET"
+        urlRequest.setValue("x-access-token \(String(describing: self.users[0].token))", forHTTPHeaderField: "Authorization")
+        
+        let dataTask = URLSession.shared.dataTask(with: urlRequest) {data, response, error in
+            guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+                print("Failed to get restaurants")
+                return
+            }
+            do {
+                if let json = try? JSONSerialization.jsonObject(with: data!, options: []) {
+                    guard let jsonArray = json as? [[String: Any]] else { return }
+                    for dic in jsonArray{
+                        guard let name = dic["name"] as? String else { return }
+                        guard let address = dic["address"] as? String else { return }
+                        guard let serverId = dic["_id"] as? String else { return }
+                        let restaurantToPush = Restaurant(context: self.managedObjectContext)
+                        restaurantToPush.name = name
+                        restaurantToPush.address = address
+                        restaurantToPush.serverId = serverId
+                        self.saveDataBase()
+                    }
+                }
+                self.isLogin = true
+            }
+        }
+        dataTask.resume()
+    }
+    
+    func saveDataBase() {
+        do {
+            try self.managedObjectContext.save()
+        } catch {
+            print(error)
+        }
     }
 }
 

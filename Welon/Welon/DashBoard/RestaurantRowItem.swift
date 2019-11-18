@@ -13,11 +13,14 @@ struct RestaurantRowItem: View {
     var address: String = ""
     
     var body: some View {
-        HStack {
-            VStack(alignment: .leading) {
+        VStack {
+            HStack {
+                Spacer()
                 Text(name)
-                Text(address)
+                Spacer()
             }
+            Text(address)
+                .padding(.bottom, 20)
         }
     }
 }
